@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = 'About Me';
@@ -40,9 +42,7 @@ const textCase = 'capitalize';
 		</style>
 	</head>
 	<body>
-		<a href='/'>Home</a>
-		<a href='/about/'>About</a>
-		<a href='/blog/'>Blog</a>
+		<Header />
 		<h1>{pageTitle}</h1>
 		<h2>I'm {identity.name}</h2>
 
@@ -70,5 +70,11 @@ const textCase = 'capitalize';
 			This site will update as I complete more of the tutorial, so keep
 			checking back and see how my journey is going!
 		</p>
+
+		<Footer />
+
+		<script>
+			import '../scripts/menu'
+		</script>
 	</body>
 </html>
