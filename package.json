@@ -1,16 +1,21 @@
 {
-  "name": "astro-blog",
-  "type": "module",
-  "version": "0.0.1",
-  "license": "MIT",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^4.13.3"
-  }
+	"name": "astro-blog",
+	"type": "module",
+	"version": "0.0.1",
+	"license": "MIT",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"pretty": "prettier src/ --write"
+	},
+	"dependencies": {
+		"astro": "^4.13.3"
+	},
+	"devDependencies": {
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1"
+	}
 }
