@@ -1,7 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = 'About Me';
 
@@ -30,10 +29,6 @@ const textCase = 'capitalize';
 		<meta name='generator' content={Astro.generator} />
 		<title>{pageTitle} | Astro Blog</title>
 		<style define:vars={{ skillColor, fontWeight, textCase }}>
-			h1 {
-				color: purple;
-				font-size: 4rem;
-			}
 			.skill {
 				color: var(--skillColor);
 				font-weight: var(--fontWeight);
@@ -42,39 +37,37 @@ const textCase = 'capitalize';
 		</style>
 	</head>
 	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-		<h2>I'm {identity.name}</h2>
+		<BaseLayout title={pageTitle}>
+			<h2>I'm {identity.name}</h2>
 
-		<p>
-			I'm the {identity.occupation}. I'm from {identity.kingdom}, {
-				identity.country
-			}.
-		</p>
-		{
-			identity.hobbies.length >= 2 && (
-				<li>
-					Two of my hobbies are: {identity.hobbies[0]} and{' '}
-					{identity.hobbies[1]}
-				</li>
-			)
-		}
+			<p>
+				I'm the {identity.occupation}. I'm from {identity.kingdom}, {
+					identity.country
+				}.
+			</p>
+			{
+				identity.hobbies.length >= 2 && (
+					<li>
+						Two of my hobbies are: {identity.hobbies[0]} and{' '}
+						{identity.hobbies[1]}
+					</li>
+				)
+			}
 
-		<ul>
-			{skills.map((skill) => <li class='skill'>{skill}</li>)}
-		</ul>
+			<ul>
+				{skills.map((skill) => <li class='skill'>{skill}</li>)}
+			</ul>
 
-		{killedAWight && <p>I've killed a wight at the battle of Hardhome</p>}
+			{
+				killedAWight && (
+					<p>I've killed a wight at the battle of Hardhome</p>
+				)
+			}
 
-		<p>
-			This site will update as I complete more of the tutorial, so keep
-			checking back and see how my journey is going!
-		</p>
-
-		<Footer />
-
-		<script>
-			import '../scripts/menu'
-		</script>
+			<p>
+				This site will update as I complete more of the tutorial, so
+				keep checking back and see how my journey is going!
+			</p>
+		</BaseLayout>
 	</body>
 </html>
