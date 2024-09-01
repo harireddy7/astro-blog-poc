@@ -12,8 +12,10 @@
 		"pretty": "prettier src/ --write"
 	},
 	"dependencies": {
+		"@astrojs/preact": "^3.5.2",
 		"@astrojs/rss": "^4.0.7",
-		"astro": "^4.13.3"
+		"astro": "^4.13.3",
+		"preact": "^10.23.2"
 	},
 	"devDependencies": {
 		"prettier": "^3.3.3",
